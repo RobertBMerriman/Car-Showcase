@@ -24,7 +24,7 @@ export const setupControls = (canvas: HTMLCanvasElement, camera: Camera): OrbitC
   // controls.addEventListener("change", e => {
   //   // requestAnimationFrame(render);
   // });
-  controls.maxPolarAngle = Math.PI / (180 / 95);
+  // controls.maxPolarAngle = Math.PI / (180 / 95);
   controls.minPolarAngle = Math.PI / (180 / 35);
   // controls.autoRotate = true;
   controls.autoRotateSpeed = 0.5; // 2 default
