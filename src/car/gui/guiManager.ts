@@ -5,7 +5,7 @@ import { CarParts } from "../car-showcase";
 
 export const setupGui = (carParts: CarParts) => {
   const gui = new dat.GUI();
-  const bodyColourUi = gui.add({ body: "default" }, "body", {
+  const bodyColourUi = gui.add({ body: "blue" }, "body", {
     Black: "black",
     White: "white",
     Blue: "blue",
@@ -35,18 +35,18 @@ export const setupGui = (carParts: CarParts) => {
     changeCustom();
   };
 
-  const changeMetalness = (metalness: number) => {
-    bodyColours.custom.metalness = metalness;
-    changeCustom();
-  };
+  // const changeMetalness = (metalness: number) => {
+  //   bodyColours.custom.metalness = metalness;
+  //   changeCustom();
+  // };
 
-  const changeRoughness = (roughness: number) => {
-    bodyColours.custom.roughness = roughness;
-    changeCustom();
-  };
+  // const changeRoughness = (roughness: number) => {
+  //   bodyColours.custom.roughness = roughness;
+  //   changeCustom();
+  // };
 
   const changeableColor = {
-    "Change body color": 0x000000,
+    "Change body color": bodyColours.blue.color,
     Metalness: 1.0,
     Roughness: 0.2
   };
@@ -56,4 +56,5 @@ export const setupGui = (carParts: CarParts) => {
 
   // gui.add(changeableColor, "Metalness", 0, 1, 0.05).onChange(changeMetalness);
   // gui.add(changeableColor, "Roughness", 0, 1, 0.05).onChange(changeRoughness);
+  setBodyColour("blue");
 };
