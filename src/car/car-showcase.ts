@@ -94,14 +94,15 @@ export const main = () => {
 
     if (carParts) {
       const left = carParts.wheels.front.left;
+      const right = carParts.wheels.front.right;
 
       const turnSpeed = Math3.degToRad(0.1);
       left.rotateOnWorldAxis(new Vector3(0, 0, -1).normalize(), turnSpeed);
-      carParts.wheels.front.right.rotateOnWorldAxis(new Vector3(0, -1, 0).normalize(), turnSpeed);
+      right.rotateOnWorldAxis(new Vector3(0, -1, 0).normalize(), turnSpeed);
 
       const driveSpeed = Math3.degToRad(-2);
       left.rotateX(driveSpeed);
-      carParts.wheels.front.right.rotateX(driveSpeed);
+      right.rotateX(driveSpeed);
       carParts.wheels.back.left.rotateX(driveSpeed);
       carParts.wheels.back.right.rotateX(driveSpeed);
     }
